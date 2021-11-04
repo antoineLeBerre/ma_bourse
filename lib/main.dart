@@ -1,6 +1,39 @@
 import 'package:flutter/material.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+import 'package:ma_bourse/data/daos/bourse_records_dao.dart';
+import 'package:ma_bourse/data/models/bourse_records.dart';
 
-void main() {
+void main() async {
+  await Hive.initFlutter();
+  Hive.registerAdapter(BourseRecordsHiveAdapter());
+
+  var box = await Hive.openBox<BourseRecordsHive>('records');
+  // box.deleteAll(box.values);
+  // box.add(BourseRecordsHive(
+  //     day: DateTime.now(),
+  //     lastDayRecord: 122.2,
+  //     dayRecord: 510.5,
+  //     totalRecord: 850.44));
+  // box.add(BourseRecordsHive(
+  //     day: DateTime(2021, 11, 01),
+  //     lastDayRecord: 127.2,
+  //     dayRecord: 5210.5,
+  //     totalRecord: 8850.44));
+  // box.add(BourseRecordsHive(
+  //     day: DateTime(2021, 11, 02),
+  //     lastDayRecord: 250.2,
+  //     dayRecord: 10.5,
+  //     totalRecord: 80.44));
+  var test = await BourseRecordsDao().getAllRecords();
+  var test2 = await BourseRecordsDao().getLastDayRecords();
+  var test3 = await BourseRecordsDao().getRecordsByDay(DateTime(2021, 11, 02));
+  print(test3);
+  for (var e in test) {
+    print(e.lastDayRecord);
+    print(e.day);
+    print(e.dayRecord);
+    print(e.totalRecord);
+  }
   runApp(const MyApp());
 }
 
