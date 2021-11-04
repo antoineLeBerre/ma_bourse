@@ -1,7 +1,7 @@
 import 'package:hive/hive.dart';
 import 'package:ma_bourse/domain/entities/bourse_records.dart';
 
-part 'bourse_records.g.dart';
+part 'bourse_records_hive.g.dart';
 
 @HiveType(typeId: 0)
 class BourseRecordsHive {

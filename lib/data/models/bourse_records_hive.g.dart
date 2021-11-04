@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'bourse_records.dart';
+part of 'bourse_records_hive.dart';
 
 // **************************************************************************
 // TypeAdapterGenerator

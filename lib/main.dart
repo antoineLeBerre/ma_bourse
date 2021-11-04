@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:ma_bourse/data/daos/bourse_records_dao.dart';
-import 'package:ma_bourse/data/models/bourse_records.dart';
+import 'package:ma_bourse/data/models/bourse_records_hive.dart';
 
 void main() async {
   await Hive.initFlutter();

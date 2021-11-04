@@ -1,6 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hive/hive.dart';
-import 'package:ma_bourse/data/models/bourse_records.dart';
+import 'package:ma_bourse/data/models/bourse_records_hive.dart';
 import 'package:collection/collection.dart';
 
 final bourseRecordsDaoProvider =
